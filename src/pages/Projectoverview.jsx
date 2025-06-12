@@ -4,7 +4,7 @@ import { MoveRight } from "lucide-react";
 import AnimatedTooltip from "@/components/ui/Animatedtooltip";
 import { Marquee, Marqueeviewcard } from "@/components/ui/Marquee";
 import { SiFastapi, SiKaggle, SiReact } from "react-icons/si";
-
+import { useNavigate } from "react-router-dom";
 const people = [
   {
     id: 1,
@@ -62,6 +62,7 @@ const MarqueeItems = [
 ];
 
 const Projectoverview = () => {
+  const navigate = useNavigate()
   return (
     <div className="m-5 flex flex-col justify-center items-center gap-15 mt-10">
       <div className="flex justify-center items-center ">
@@ -80,7 +81,9 @@ const Projectoverview = () => {
             deliver precise food identification, making it practical and
             efficient for real-world use.
           </p>
-          <button className="items-center justify-center py-1 w-36 h-9 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-lg transition duration-200 flex group ">
+          <button onClick={()=>{
+            navigate("/upload-image")
+          }} className="items-center justify-center py-1 w-36 h-9 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-lg transition duration-200 flex group ">
             <span className="absolute  transition-all duration-300 opacity-100 group-hover:opacity-0 group-hover:scale-90">
               Get Started
             </span>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Layout, Upload, Button, Table, message } from "antd";
 import { UploadOutlined, ReloadOutlined } from "@ant-design/icons";
-import api from "@/service/apiconfig";
 import "antd/dist/reset.css";
 import { recognizeImage } from "@/service/apis";
 
@@ -39,10 +38,6 @@ const Main = () => {
 
     setLoading(true);
     try {
-      // const response = await api.post(
-      //   "api/classify?model=food-classify",
-      //   formData,
-      // );
       const response = await recognizeImage(formData)
       console.log(response)
       const { data } = response.data;

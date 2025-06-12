@@ -62,7 +62,6 @@ export function MainLayout() {
                 hover={false}
                 link={{
                   label: name,
-                  href: "#",
                   icon: (
                     <img
                       loading="lazy"
