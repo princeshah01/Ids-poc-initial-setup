@@ -44,11 +44,11 @@ export const Sidebar = ({
   );
 };
 
-export const SidebarBody = (props) => {
+export const SidebarBody = ({projectName,...props}) => {
   return (
     <>
       <DesktopSidebar {...props} />
-      <MobileSidebar {...(props)} />
+      <MobileSidebar projectName={projectName} {...props} />
     </>
   );
 };
@@ -67,7 +67,7 @@ export const DesktopSidebar = ({
           className
         )}
         animate={{
-          width: animate ? (open ? "170px" : "80px") : "170px",
+          width: animate ? (open ? "180px" : "60px") : "180px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -81,6 +81,7 @@ export const DesktopSidebar = ({
 export const MobileSidebar = ({
   className,
   children,
+  projectName,
   ...props
 }) => {
   const { open, setOpen } = useSidebar();
@@ -115,6 +116,7 @@ export const MobileSidebar = ({
                 onClick={() => setOpen(!open)}>
                 <X />
               </div>
+              <p className="font-semibold text-xl">{projectName}</p>
               {children}
             </motion.div>
           )}
@@ -143,8 +145,7 @@ export const SidebarLink = ({
       {...props}
     >
       
-      <span> {link.icon}</span>
-      {/* <div className="hidden group-hover/sidebar:block absolute inset-y-0 left-6 my-auto h-[60%] w-[3px] rounded-tl-lg rounded-tr-full rounded-br-full rounded-bl-lg bg-neutral-400 dark:bg-neutral-700" /> */}
+       {link.icon}
       
       <motion.span
         animate={{

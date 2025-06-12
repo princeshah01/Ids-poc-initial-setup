@@ -8,7 +8,7 @@ export const Logo = ({ open }) => {
       loading="lazy"
         src="https://idsil.com/images/IDS-logo.gif"
         alt="ids-logo"
-        className={` ${open ? "w-20 h-10" : "w-15 mr-3"}`}
+        className={` ${open ? "md:w-25 md:h-14 md:translate-x-2" : "md:w-20 "}  w-20  transition duration-150`}
       />
     </a>
   );
